@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import javax.lang.model.util.ElementScanner6;
 
 import javafx.print.PrinterAttributes;
@@ -8,6 +10,8 @@ public class ModelPenjualan {
     private int jumlah;
     private double totalHarga;
     private String bonus;
+
+    Scanner inputdata = new Scanner(System.in);
 
     ModelPenjualan() {
         kode = "anonymous";
@@ -23,6 +27,18 @@ public class ModelPenjualan {
         this.nama = nama;
         this.jumlah = jumlah;
         this.hargaItem = hargaItem;
+    }
+
+    void setData() {
+        System.out.println("********    INPUT DATA BELANJA   ********");
+        System.out.print("Masukkan Kode Barang      : ");
+        kode = inputdata.nextLine();
+        System.out.print("Masukkan Nama Barang      : ");
+        nama = inputdata.nextLine();
+        System.out.print("Masukkan Harga Barang     : ");
+        hargaItem = inputdata.nextDouble();
+        System.out.print("Masukkan Jumlah Barang    : ");
+        jumlah = inputdata.nextInt();
     }
 
     double getTotalPembelian() {
